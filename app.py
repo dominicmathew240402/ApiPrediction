@@ -65,12 +65,13 @@ def predict(test_dir):
 
 
 # Create an app
-app = Flask(__name__)
-app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024 # maximum upload size is 50 MB
-app.secret_key = "agentcrop"
-ALLOWED_EXTENSIONS = {'png', 'jpeg', 'jpg'}
-folder_num = 0
-folders_list = []
+if __name__=='_main_':
+    app.run(debug=True)
+    app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024 # maximum upload size is 50 MB
+    app.secret_key = "agentcrop"
+    ALLOWED_EXTENSIONS = {'png', 'jpeg', 'jpg'}
+    folder_num = 0
+    folders_list = []
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -173,6 +174,3 @@ def api_predict():
     if len(os.listdir(app.config['UPLOAD_FOLDER'])) > 0:
         diseases = predict(app.config['UPLOAD_FOLDER'])
         return diseases
-
-if __name__=='_main_':
-    app.run(debug=True)
