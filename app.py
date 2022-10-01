@@ -63,10 +63,11 @@ def predict(test_dir):
         prediction_dict[image_name]['source'] = details_map[image_prediction][2]
     return prediction_dict
 
+if __name__=='_main_':
+    app.run(debug=True)
 
 # Create an app
 if __name__=='_main_':
-    app.run(debug=True)
     app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024 # maximum upload size is 50 MB
     app.secret_key = "agentcrop"
     ALLOWED_EXTENSIONS = {'png', 'jpeg', 'jpg'}
