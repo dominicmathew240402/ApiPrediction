@@ -134,8 +134,7 @@ def get_disease():
             return render_template('show_prediction.html',
             folder = app.config['UPLOAD_FOLDER'],
             predictions = diseases)
-        
-    return render_template('show_prediction.html')
+            return render_template('show_prediction.html')
 
 @app.route('/favicon.ico')
 
@@ -145,7 +144,7 @@ def favicon():
 #API requests are handled here
 
 @app.route('/show_prediction', methods=['POST','GET'])
-def show_prediction();
+def show_prediction():
     return render_template('show_prediction.html')
     
 @app.route('/api/predict', methods=['POST','GET'])
