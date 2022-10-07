@@ -143,6 +143,11 @@ def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'), 'Agent-Crop-Icon.png')
 
 #API requests are handled here
+
+@app.route('/show_prediction', methods=['POST','GET'])
+def show_prediction();
+    return render_template('show_prediction.html')
+    
 @app.route('/api/predict', methods=['POST','GET'])
 
 def api_predict():
