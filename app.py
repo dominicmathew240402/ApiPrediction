@@ -135,7 +135,7 @@ def get_disease():
             folder = app.config['UPLOAD_FOLDER'],
             predictions = diseases)
         
-        return render_template('show_prediction.html')
+    return render_template('show_prediction.html')
 
 @app.route('/favicon.ico')
 
