@@ -39,9 +39,10 @@
             </nav>
         </header>
         <main class="flex-shrink-0">
-            
-            <div class="container">
+
+        <div class="container">
         <div class="row mt-5 justify-content-center">
+    
             <div class="card custom-bg-color card-custom mx-2 mb-3">
                 <img src="{{ folder+'/'+image }}" class="card-img-top mx-auto img-fluid" alt="Crop Image: {{ image }}" style="padding-top: 12px; max-height:250px; object-fit: cover;">
                 <div class="card-body">
@@ -56,23 +57,23 @@
                     {% endif %}
                 </div>
             </div>
-        {% endfor %}
         </div>
     </div>
     <div class="container text-center">
         <a href="/" class="btn btn-light btn-lg">Return to Home Page</a>
         <p class="pt-2">Note: Your Uploaded Images automatically get deleted after 1 hour.</p>
     </div>
-<!--- Image Predict --->
-            {% with messages = get_flashed_messages() %}  
-        {% if messages %}  
-            {% for message in messages %}
-                <div class="alert alert-warning text-center" role="alert" style="padding-top: 64px;">
-                    <p class="mb-0 mt-3">{{ message }}</p>
-                </div>
-            {% endfor %}  
-        {% endif %}  
-    {% endwith %}
+
+        {% with messages = get_flashed_messages() %}  
+            {% if messages %}  
+                {% for message in messages %}
+                    <div class="alert alert-warning text-center" role="alert" style="padding-top: 64px;">
+                        <p class="mb-0 mt-3">{{ message }}</p>
+                    </div>
+                {% endfor %}  
+            {% endif %}  
+        {% endwith %}
+
     <div class="alert alert-warning text-center" role="alert" id="alert"></div>
     <div class="container px-4 px-md-3">
         <div class="row align-items-lg-center align-items-md-center">
