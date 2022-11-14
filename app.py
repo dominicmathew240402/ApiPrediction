@@ -118,7 +118,7 @@ def pesticide():
     return render_template("PesticideRecommendation.html")
 
 @app.route("/show_prediction.html")
-dep predictictDom():
+def predictictDom():
     return render_template("show_prediction.html")
 
 @app.route("/404.html")
