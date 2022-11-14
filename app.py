@@ -97,6 +97,34 @@ def clean():
 
 scheduler.start()
 
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+@app.route("/index.html")
+def index2():
+    return render_template("index.html")
+
+@app.route("/CropRecommendation.html")
+def crop():
+    return render_template("CropRecommendation.html")
+
+@app.route("/FertilizerRecommendation.html")
+def fertilizer():
+    return render_template("FertilizerRecommendation.html")
+
+@app.route("/PesticideRecommendation.html")
+def pesticide():
+    return render_template("PesticideRecommendation.html")
+
+@app.route("/show_prediction.html")
+dep predictictDom():
+    return render_template("show_prediction.html")
+
+@app.route("/404.html")
+def error_html():
+    return render_template("404.html")
+
 @app.route('/', methods=['GET', 'POST'])
 
 def get_disease():
